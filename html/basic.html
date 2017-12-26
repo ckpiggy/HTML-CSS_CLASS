@@ -9,9 +9,20 @@
       article {
         padding: 10px 20px;
       }
+      .doc-view {
+        display: flex;
+        justify-content: space-around
+      }
+      .doc-view .des {
+        width: 45%;
+      }
+      .doc-view iframe {
+        width: 50%;
+        height: auto;
+      }
       article iframe {
-        width: 95%;
-        height: 400px;
+        width: 90%;
+        height: 300px;
       }
       article .ommit {
         color: lightgray;
@@ -62,57 +73,63 @@
         <p><em>這代表我們現在就要抱著規格書開始啃了嗎？</em></p>
         <p>當然不是，不然我也沒必要寫這麼多字了！我們會用比較<strong>不殘忍</strong>的方式帶各位看規格。
         言歸正傳我們現在來看本章相關的<a href="https://www.w3.org/TR/html5/semantics.html#semantics" target="_blank">W3C文件</a></p>
-        <iframe src="https://www.w3.org/TR/html5/semantics.html#semantics"></iframe>
-        <p><strong>請先深呼吸，慢慢吐氣</strong></p>
-        <p>先看標題 <strong><q>4. The elements of HTML</q></strong></p>
-        <p>這一章講的是HTML的元素</p>
-        <p>接著看<strong><q>4.1. The document element</q></strong></p>
-        <p>4.1節說的是文件元素。什麼是文件元素？一個HTML檔就是一個文件，文件元素也就所有元素的根了。</p>
-        <p>最後<strong><q>4.1.1. The html element</q></strong></p>
-        <p>這邊就是介紹html這個元素，這個元素屬於文件元素之一，目前為止的規格中也只有html一種文件元素。接著我們一項一項看下去，</p>
-        <ol>
-          <li>
-            <div>
-              <h4>Categories</h4>
-              <p>解釋該元素的類別。我們等一下看到的<q>Content model</q>裡面放的也是元素的類別，
-                不過指的是子元素的類別（這個元素的肚子裡面可以放什麼）
-                <a href="https://www.w3.org/TR/html5/dom.html#categories" target="_blank">Categories的相關介紹</a></p>
-              <p>有趣的是這邊的類別寫的是<q>None</q>也就是無類別。嘿嘿！沒錯不是所有的元素都有類別，不過大部分的都有！
-                而且一個元素可能同時屬於一種以上的類別。</p>
-            </div>
-          </li>
-          <li class="ommit">
-            <h4>Contexts in which this element can be used</h4>
-            <p>基本上，這一項不用看，因為是<q>non-normative description</q>直接看下面的<q>Content model</q></p>
-          </li>
-          <li>
-            <h4>Content model</h4>
-            <p>這邊寫的就是該元素裡面可以放什麼類別的元素。</p>
-            <p><strong><em>等等！這邊直接寫&lt;head&gt;和&lt;body&gt;不是寫類別耶！</em></strong></p>
-            <p>在這邊我們看到的又是個特例，這也告訴我們&lt;html&gt;裡面只能放一個&lt;head&gt;並且緊接著一個&lt;body&gt;元素喔！</p>
-          </li>
-          <li class="ommit">
-            <h4>Tag omission in text/html</h4>
-            <p>這邊說的是該元素的opening/closing tag是否可忽略，請直接跳過。因為這項也是<q>non-normative description</q></p>
-          </li>
-          <li>
-            <h4>Content attributes</h4>
-            <p>這邊講的是該元素可以設定的屬性，在&lt;html&gt;中我們可以設定<q>Global attributes</q>（全域屬性）和
-              <q>manifest</q>（已經準備廢棄的屬性可以忽略），其中最重要的是<q>lang</q>屬性，這個屬性標示這個網頁的主要語言，
-              在某些時候非常重要，例如：當你的使用者使用語音合成工具在讀你的網頁時！（視力不好的朋友也會上網的！）
-              目前這個網頁的lang屬性：&lt;html lang="zh-cmn"&gt;
-            </p>
-          </li>
-          <li class="ommit">
-            <h4>Allowed ARIA role attribute values</h4>
-            <h4>Allowed ARIA state and property attributes</h4>
-            <p>這兩項都是<q>non normative</q>請忽略</p>
-          </li>
-          <li class="ommit">
-            <h4>DOM interface</h4>
-            <p>在學習JS之前請忽略</p>
-          </li>
-        </ol>
+        <div class="doc-view">
+          <div class="des">
+              <p><strong>請先深呼吸，慢慢吐氣</strong></p>
+              <p>先看標題 <strong><q>4. The elements of HTML</q></strong></p>
+              <p>這一章講的是HTML的元素</p>
+              <p>接著看<strong><q>4.1. The document element</q></strong></p>
+              <p>4.1節說的是文件元素。什麼是文件元素？一個HTML檔就是一個文件，文件元素也就所有元素的根了。</p>
+              <p>最後<strong><q>4.1.1. The html element</q></strong></p>
+              <p>這邊就是介紹html這個元素，這個元素屬於文件元素之一，目前為止的規格中也只有html一種文件元素。接著我們一項一項看下去，</p>
+              <ol>
+                <li>
+                  <div>
+                    <h4>Categories</h4>
+                    <p>解釋該元素的類別。我們等一下看到的<q>Content model</q>裡面放的也是元素的類別，
+                      不過指的是子元素的類別（這個元素的肚子裡面可以放什麼）
+                      <a href="https://www.w3.org/TR/html5/dom.html#categories" target="_blank">Categories的相關介紹</a></p>
+                    <p>有趣的是這邊的類別寫的是<q>None</q>也就是無類別。嘿嘿！沒錯不是所有的元素都有類別，不過大部分的都有！
+                      而且一個元素可能同時屬於一種以上的類別。</p>
+                  </div>
+                </li>
+                <li class="ommit">
+                  <h4>Contexts in which this element can be used</h4>
+                  <p>基本上，這一項不用看，因為是<q>non-normative description</q>直接看下面的<q>Content model</q></p>
+                </li>
+                <li>
+                  <h4>Content model</h4>
+                  <p>這邊寫的就是該元素裡面可以放什麼類別的元素。</p>
+                  <p><strong><em>等等！這邊直接寫&lt;head&gt;和&lt;body&gt;不是寫類別耶！</em></strong></p>
+                  <p>在這邊我們看到的又是個特例，這也告訴我們&lt;html&gt;裡面只能放一個&lt;head&gt;並且緊接著一個&lt;body&gt;元素喔！</p>
+                </li>
+                <li class="ommit">
+                  <h4>Tag omission in text/html</h4>
+                  <p>這邊說的是該元素的opening/closing tag是否可忽略，請直接跳過。因為這項也是<q>non-normative description</q></p>
+                </li>
+                <li>
+                  <h4>Content attributes</h4>
+                  <p>這邊講的是該元素可以設定的屬性，在&lt;html&gt;中我們可以設定<q>Global attributes</q>（全域屬性）和
+                    <q>manifest</q>（已經準備廢棄的屬性可以忽略），其中最重要的是<q>lang</q>屬性，這個屬性標示這個網頁的主要語言，
+                    在某些時候非常重要，例如：當你的使用者使用語音合成工具在讀你的網頁時！（視力不好的朋友也會上網的！）
+                    目前這個網頁的lang屬性：&lt;html lang="zh-cmn"&gt;
+                  </p>
+                </li>
+                <li class="ommit">
+                  <h4>Allowed ARIA role attribute values</h4>
+                  <h4>Allowed ARIA state and property attributes</h4>
+                  <p>這兩項都是<q>non normative</q>請忽略</p>
+                </li>
+                <li class="ommit">
+                  <h4>DOM interface</h4>
+                  <p>在學習JS之前請忽略</p>
+                </li>
+              </ol>
+          </div>
+          <iframe src="https://www.w3.org/TR/html5/semantics.html#semantics"></iframe>
+        </div>
+        
+        
         <p>到這邊，我們看完了一個元素的規格，其實要看的地方也只有<q>Categories</q>、<q>Content model</q>
           和<q>Content attributes</q>而已。</p>
         <p><strong>冷靜點，沒那麼可怕的！</strong></p>
