@@ -1,0 +1,160 @@
+<!DOCTYPE=html>
+<html lang="zh-cmn">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML基礎知識</title>
+    <script src="../assets/js/activity.js"></script>
+    <style>
+      article {
+        padding: 10px 20px;
+      }
+      article iframe {
+        width: 95%;
+        height: 400px;
+      }
+      article .ommit {
+        color: lightgray;
+      }
+      div.demo-zone {
+        width: 600px;
+        padding: 0 20px;
+        margin: 20px 5px;
+      }
+      div.demo-zone .input, div.demo-zone .output {
+        width: 580px;
+        height: 100px;
+        resize: none;
+        overflow: auto;
+        box-shadow: 1px 1px 2px black;
+        font-size: 16px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h2>前言</h2>
+        <p>以下所稱HTML指的都是HTML5，課程的教材全部都是由HTML撰寫，我將盡量只使用到已經教過的技巧來撰寫教材
+          ，換句話說，隨著課程的進行，我們的教材將會隨著學到的HTML技能越來越&quot;好看&quot;。</p>
+      </header>
+      <main>
+        <h2>什麼是HTML</h2>
+        <p>HTML(Hypertext Markup Language)並不是程式語言，它並沒有變數與流程控制等程式語言的基礎元素。它是標籤語言，作用在於告訴瀏覽器這份文件的結構。</p>
+        <p>HTML構成的要素：&quot;element&quot;，一個element構成的要件通常是</p>
+        <ol>
+          <li><strong>opening tag</strong></li>
+          <li><strong>closing tag</strong></li>
+          <li><strong>content</strong></li>
+        </ol>
+        <p>長得像這樣:</p>
+        <div>&lt;tagName&gt;content&lt;/tagName&gt;</div>
+        <h3>動手做看看！</h3>
+        <p>請試著用&lt;strong&gt; tag把下面的文字包覆，並且觀察output的變化</p>
+        <div id="demo1"></div>
+        <h3>HTML元素</h3>
+        <p>
+          HTML的元素百百種，當我們遇到問題的時候除了Google和試誤法以外有更好的方法：<strong>查規格！</strong>
+          沒錯就是<strong>查規格</strong>，各家瀏覽器為什麼能讀懂HTML就是因為他們依照W3C這個組織制定的規格實作瀏覽器，
+          遇到問題的時候查找規格才能明白問題的真因。
+        </p>
+        <p><em>這代表我們現在就要抱著規格書開始啃了嗎？</em></p>
+        <p>當然不是，不然我也沒必要寫這麼多字了！我們會用比較<strong>不殘忍</strong>的方式帶各位看規格。
+        言歸正傳我們現在來看本章相關的<a href="https://www.w3.org/TR/html5/semantics.html#semantics" target="_blank">W3C文件</a></p>
+        <iframe src="https://www.w3.org/TR/html5/semantics.html#semantics"></iframe>
+        <p><strong>請先深呼吸，慢慢吐氣</strong></p>
+        <p>先看標題 <strong><q>4. The elements of HTML</q></strong></p>
+        <p>這一章講的是HTML的元素</p>
+        <p>接著看<strong><q>4.1. The document element</q></strong></p>
+        <p>4.1節說的是文件元素。什麼是文件元素？一個HTML檔就是一個文件，文件元素也就所有元素的根了。</p>
+        <p>最後<strong><q>4.1.1. The html element</q></strong></p>
+        <p>這邊就是介紹html這個元素，這個元素屬於文件元素之一，目前為止的規格中也只有html一種文件元素。接著我們一項一項看下去，</p>
+        <ol>
+          <li>
+            <div>
+              <h4>Categories</h4>
+              <p>解釋該元素的類別。我們等一下看到的<q>Content model</q>裡面放的也是元素的類別，
+                不過指的是子元素的類別（這個元素的肚子裡面可以放什麼）
+                <a href="https://www.w3.org/TR/html5/dom.html#categories" target="_blank">Categories的相關介紹</a></p>
+              <p>有趣的是這邊的類別寫的是<q>None</q>也就是無類別。嘿嘿！沒錯不是所有的元素都有類別，不過大部分的都有！
+                而且一個元素可能同時屬於一種以上的類別。</p>
+            </div>
+          </li>
+          <li class="ommit">
+            <h4>Contexts in which this element can be used</h4>
+            <p>基本上，這一項不用看，因為是<q>non-normative description</q>直接看下面的<q>Content model</q></p>
+          </li>
+          <li>
+            <h4>Content model</h4>
+            <p>這邊寫的就是該元素裡面可以放什麼類別的元素。</p>
+            <p><strong><em>等等！這邊直接寫&lt;head&gt;和&lt;body&gt;不是寫類別耶！</em></strong></p>
+            <p>在這邊我們看到的又是個特例，這也告訴我們&lt;html&gt;裡面只能放一個&lt;head&gt;並且緊接著一個&lt;body&gt;元素喔！</p>
+          </li>
+          <li class="ommit">
+            <h4>Tag omission in text/html</h4>
+            <p>這邊說的是該元素的opening/closing tag是否可忽略，請直接跳過。因為這項也是<q>non-normative description</q></p>
+          </li>
+          <li>
+            <h4>Content attributes</h4>
+            <p>這邊講的是該元素可以設定的屬性，在&lt;html&gt;中我們可以設定<q>Global attributes</q>（全域屬性）和
+              <q>manifest</q>（已經準備廢棄的屬性可以忽略），其中最重要的是<q>lang</q>屬性，這個屬性標示這個網頁的主要語言，
+              在某些時候非常重要，例如：當你的使用者使用語音合成工具在讀你的網頁時！（視力不好的朋友也會上網的！）
+              目前這個網頁的lang屬性：&lt;html lang="zh-cmn"&gt;
+            </p>
+          </li>
+          <li class="ommit">
+            <h4>Allowed ARIA role attribute values</h4>
+            <h4>Allowed ARIA state and property attributes</h4>
+            <p>這兩項都是<q>non normative</q>請忽略</p>
+          </li>
+          <li class="ommit">
+            <h4>DOM interface</h4>
+            <p>在學習JS之前請忽略</p>
+          </li>
+        </ol>
+        <p>到這邊，我們看完了一個元素的規格，其實要看的地方也只有<q>Categories</q>、<q>Content model</q>
+          和<q>Content attributes</q>而已。</p>
+        <p><strong>冷靜點，沒那麼可怕的！</strong></p>
+        <h3>元素種類</h3>
+        <p>下面規格書的3.2.4.2介紹html的7大類原素，有興趣的可以看看。但我們目前不會深入探討。（是不是鬆了一口氣？）</p>
+        <iframe src="https://www.w3.org/TR/html5/dom.html#categories"></iframe>
+        <p>回想我一開始學習網頁的時候我腦中的元素只有兩大類：</p>
+        <ol>
+          <li><p>會佔據一行的元素<q>Block elements</q></p></li>
+          <li><p>只會縮在一起的元素<q>Inline elements</q></p></li>
+          <li><p>不會佔據一行又不會縮在一起的元素<q>Inline block elements</q></p></li>
+        </ol>
+        <p>舉例來說：我們剛剛在前面操作的&lt;strong&gt;就是inline element，包覆段落文字的&lt;p&gt;就是block element</p>
+        <h3>動手做看看！</h3>
+        <p>我們試著把兩個段落分開，並且把<q>強壯</q>兩個字變得<q>strong</q></p>
+        <div id="demo2"></div>
+        <h3>空元素</h3>
+        <p>不是所有的元素會夾著content，像是&lt;img&gt;元素只需要在屬性中標示圖片URL就能夠顯示內容</p>
+        <p>請試著為一個&lt;img&gt;加上<q>src</q>屬性<q>../assets/img/cute.png</q></p>
+        <div id="demo3"></div>
+        <h3>更多屬性</h3>
+        <p>請為以下的&lt;a&gt;加上<q>href</q>屬性<q>https://google.com</q>並點擊看看</p>
+        <div id="demo4"></div>
+        <p>請為以下的&lt;input&gt;加上<q>distabled</q>屬性並試著輸入</p>
+        <div id="demo5"></div>
+        <h3>課後活動</h3>
+        <p>打開這個網頁的原始碼，試著自己玩一玩！提出你的問題吧！</p>
+      </main>
+    </article>
+    <script>
+      (function () {
+        var demo1 = document.querySelector('#demo1')
+        demo1.appendChild(actCreateHtmlDemoZone('這是一段很強壯的話...'))
+        var demo2 = document.querySelector('#demo2')
+        demo2.appendChild(actCreateHtmlDemoZone('這是一個普通的段落含有很強壯的字...這是一個普通的段落...'))
+        var demo3 = document.querySelector('#demo3')
+        demo3.appendChild(actCreateHtmlDemoZone('<img>'))
+        var demo4 = document.querySelector('#demo4')
+        demo4.appendChild(actCreateHtmlDemoZone('<a target="_blank">go google</a>'))
+        var demo5 = document.querySelector('#demo5')
+        demo5.appendChild(actCreateHtmlDemoZone('<input>'))
+      })()
+    </script>
+  </body>
+</html>
