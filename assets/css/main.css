@@ -15,3 +15,11 @@ div.demo-zone .input, div.demo-zone .output {
   font-size: 16px;
   border: none;
 }
+div.code {
+  padding: 10px;
+  background: black;
+  color: white;
+}
+div.code code {
+  display: block;
+}

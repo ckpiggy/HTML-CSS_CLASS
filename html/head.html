@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+  <head>
+    <title>認識head元素</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/activity.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <style>
+      li.folder {
+        list-style: none;
+      }
+      li.folder::before {
+        content: "| ";
+      }
+      li.file {
+        list-style: none;
+      }
+      li.file::before {
+        content: "- ";
+      }
+      li.target {
+        font-weight: bold;
+      }
+      img.sshot {
+        box-shadow: 1px 1px 3px gray;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h3>你將會學到：</h3>
+        <ol>
+          <li><p>為網頁加入標題</p></li>
+          <li><p>為網頁加入專屬icon</p></li>
+          <li><p>為網頁關鍵字等資料</p></li>
+          <li><p>為網頁加入js與css</p></li>
+        </ol>
+      </header>
+      <main>
+        <p>
+          <strong>
+              首先我們先看一下&lt;head&gt;元素的
+              <a href="https://www.w3.org/TR/html5/document-metadata.html#the-head-element" target="_blank">說明文件</a>
+          </strong>
+        </p>
+        <p>
+          裡面提到&lt;head&gt;元素是&lt;html&gt;元素內的第一個元素，
+          用來表示整份<q>文件</q>的metadata（簡而言之就是關於如何閱讀這個網頁的資料），這些資料基本上有些是讓使用者更明白網頁內容，
+          有些是讓搜尋引擎、瀏覽器、社群網站更快得知網站的屬性。
+        </p>
+        <h3>在開始之前</h3>
+        <p>
+          請打開examples資料夾裡面的head-example.html，位置在：
+          <ul class="ls">
+            <li class="folder">assets</li>
+            <li class="folder">css</li>
+            <li class="folder">html</li>
+              <ul class="ls">
+                <li class="folder">examples</li>
+                <ul class="ls">
+                  <li class="file target">head-example.html</li>
+                </ul>
+                <li class="file">basic.html</li>
+                <li class="file">head.html</li>
+              </ul>
+            <li class="file">index.html</li>
+            <li class="file">README.md</li>
+          </ul>
+        </p>
+        <p>如果你使用的是Chrome瀏覽器，那麼你很幸運可以看到</p>
+        <img class="sshot" src="../assets/img/head_ex1_1.png"/>
+        <p>如果你使用的是safari或firefox，你可能會看到</p>
+        <img class="sshot" src="../assets/img/head_ex1_3.png" alt="safari"/>
+        <img class="sshot" src="../assets/img/head_ex1_2.png" alt="firefox"/>
+        <p><strong>天啊！無法正常顯示就算了，居然連亂碼都有兩種花樣！</strong></p>
+        <p>
+          這是因為chrome瀏覽器的預設解碼參數剛好和我們打的內容吻合，所以可以正常顯示，但是其他瀏覽器就沒有那麼幸運了，
+          這時候我們要告訴瀏覽器如何解碼我們打進去的中文字。請在&lt;head&gt;&lt;/head&gt;元素中間插入以下的HTML代碼。
+        </p>
+        <div class="code">
+          <code>&lt;meta charset="utf-8"&gt;</code>
+        </div>
+        <p>
+          這段代碼告訴瀏覽器網頁內容的文字請用<q>utf-8</q>解碼，這是metadata很重要的功用。
+        </p>
+        <h3>為網頁加入標題</h3>
+        <p>請在&lt;head&gt;&lt;/head&gt;元素中間插入代碼新增title元素，現在你的&lt;head&gt;內容應該長得像這樣：</p>
+        <div class="code">
+            <code>&lt;meta charset="utf-8"&gt;</code>
+            <code>&lt;title&gt;哈囉你好&lt;/title&gt;</code>
+        </div>
+        <p>重新整理之後，瀏覽器便會顯示網頁的title。</p>
+        <img src="../assets/img/head_ex1_4.png"/>
+        <h3>為網頁加入專屬icon</h3>
+        <p>
+            &lt;head&gt;&lt;/head&gt;元素中間插入代碼新增link元素：
+        </p>
+        <div class="code">
+            <code>&lt;meta charset="utf-8"&gt;</code>
+            <code>&lt;title&gt;哈囉你好&lt;/title&gt;</code>
+            <code>&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/&gt;</code>
+        </div>
+        <p>重新整理之後可以看到頁籤發生變化。</p>
+        <img src="../assets/img/head_ex1_5.png"/>
+        <p>把網頁加入我的最愛之後，可以看到顯示出我們剛剛新增的title以及icon。</p>
+        <img src="../assets/img/head_ex1_6.png"/>
+        <h3>為網頁關鍵字等資料</h3>
+        <p>
+          加入作者與網頁描述。我們可以在網頁中加入作者的資訊，不過更重要的是網頁描述，因為描述內容通常會顯示在搜尋引擎的頁面。
+        </p>
+        <p>例如以下網頁</p>
+        <img src="../assets/img/head_ex1_7.png"/>
+        <p>Google在網頁title與網址下的內容就是網頁描述，我們可以用開發者工具看看。</p>
+        <img src="../assets/img/head_ex1_8.png"/>
+        <p>接著我們可以練習把以下的代碼插入&lt;head&gt;元素中：</p>
+        <div class="code">
+          <code>&lt;meta name="author" content="ChaoTang" /&gt;</code>
+          <code>&lt;meta name="description" content="這是一個關於html head的教學網頁" /&gt;</code>
+        </div>
+        <p>
+          除了搜尋引擎之外，還有許多其他系統會讀取你的網頁，例如facebook利用他們發明的
+          <a href="http://ogp.me/" target="_blank">open graphic data</a>
+          來讀取網頁訊息，如果你希望網頁被用戶在fb分享時呈現的樣式美觀，你就必須在&lt;head&gt;中加入fb希望你加入的資料：
+        </p>
+        <img src="../assets/img/head_ex1_9.png"/>
+        <p>這裡看到的訊息是由以下meta元素產生的</p>
+        <img src="../assets/img/head_ex1_10.png"/>
+        <h3>為網頁加入js與css</h3>
+        <p>
+          幾乎所有現代的網站都會用css來讓網頁更美觀，用js來加強網頁的互動性，我們可以用&lt;link&gt;加入css，
+          用&lt;script&gt;加入js。
+        </p>
+        <p>
+          css必須用link元素來引入，而link元素只能存在head中，換言之如果要由外部引入css檔案只能在head中引入。
+          我們設定兩個屬性rel和href，其中rel告訴瀏覽器這邊連結的是網頁的stylesheet，href則是檔案位置。
+        </p>
+        <div class="code">
+          <code>&lt;link rel="stylesheet" href="./hello.css" /&gt;</code>
+        </div>
+        <p>
+          &lt;script&gt;元素則不一定要放在head中，通常會將它放在body元素的底部，這麼做可以加快其他元素的讀取，
+          我們只需設定src屬性告訴瀏覽器檔案位置即可。
+        </p>
+        <div class="code">
+          <code>&lt;script src="./hello.js"&gt;&lt;/script&gt;</code>
+        </div>
+      </main>
+    </article>
+    
+  </body>
+</html>
