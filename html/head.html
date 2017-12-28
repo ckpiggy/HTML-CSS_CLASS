@@ -71,10 +71,10 @@
           </ul>
         </p>
         <p>如果你使用的是Chrome瀏覽器，那麼你很幸運可以看到</p>
-        <img class="sshot" src="../assets/img/head_ex1_1.png"/>
+        <img class="sshot" src="../assets/img/head_ex1_1.png" title="chrome"/>
         <p>如果你使用的是safari或firefox，你可能會看到</p>
-        <img class="sshot" src="../assets/img/head_ex1_3.png" alt="safari"/>
-        <img class="sshot" src="../assets/img/head_ex1_2.png" alt="firefox"/>
+        <img class="sshot" src="../assets/img/head_ex1_3.png" alt="safari" title="safari"/>
+        <img class="sshot" src="../assets/img/head_ex1_2.png" alt="firefox" title="firefox"/>
         <p><strong>天啊！無法正常顯示就算了，居然連亂碼都有兩種花樣！</strong></p>
         <p>
           這是因為chrome瀏覽器的預設解碼參數剛好和我們打的內容吻合，所以可以正常顯示，但是其他瀏覽器就沒有那麼幸運了，
@@ -86,7 +86,7 @@
         <p>
           這段代碼告訴瀏覽器網頁內容的文字請用<q>utf-8</q>解碼，這是metadata很重要的功用。
         </p>
-        <h3>為網頁加入標題</h3>
+        <h3><a name="add_title">為網頁加入標題</a></h3>
         <p>請在&lt;head&gt;&lt;/head&gt;元素中間插入代碼新增title元素，現在你的&lt;head&gt;內容應該長得像這樣：</p>
         <div class="code">
             <code>&lt;meta charset="utf-8"&gt;</code>
@@ -94,7 +94,7 @@
         </div>
         <p>重新整理之後，瀏覽器便會顯示網頁的title。</p>
         <img src="../assets/img/head_ex1_4.png"/>
-        <h3>為網頁加入專屬icon</h3>
+        <h3><a name="add_icon">為網頁加入專屬icon</a></h3>
         <p>
             &lt;head&gt;&lt;/head&gt;元素中間插入代碼新增link元素：
         </p>
@@ -107,7 +107,7 @@
         <img src="../assets/img/head_ex1_5.png"/>
         <p>把網頁加入我的最愛之後，可以看到顯示出我們剛剛新增的title以及icon。</p>
         <img src="../assets/img/head_ex1_6.png"/>
-        <h3>為網頁關鍵字等資料</h3>
+        <h3><a name="keyword">為網頁關鍵字等資料</a></h3>
         <p>
           加入作者與網頁描述。我們可以在網頁中加入作者的資訊，不過更重要的是網頁描述，因為描述內容通常會顯示在搜尋引擎的頁面。
         </p>
@@ -128,7 +128,7 @@
         <img src="../assets/img/head_ex1_9.png"/>
         <p>這裡看到的訊息是由以下meta元素產生的</p>
         <img src="../assets/img/head_ex1_10.png"/>
-        <h3>為網頁加入js與css</h3>
+        <h3><a name="css_js">為網頁加入js與css</a></h3>
         <p>
           幾乎所有現代的網站都會用css來讓網頁更美觀，用js來加強網頁的互動性，我們可以用&lt;link&gt;加入css，
           用&lt;script&gt;加入js。
@@ -149,6 +149,15 @@
         </div>
       </main>
     </article>
-    
+    <script>
+      var menu = createHoverMenu([
+          {label: '為網頁加入標題', href: '#add_title'},
+          {label: '為網頁加入專屬icon', href: '#add_icon'},
+          {label: '為網頁關鍵字等資料', href: '#keyword'},
+          {label: '為網頁加入js與css', href: '#css_js'}
+        ]);
+      var body = document.getElementsByTagName('body')[0];
+      body.appendChild(menu);
+    </script>
   </body>
 </html>

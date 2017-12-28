@@ -23,3 +23,32 @@ div.code {
 div.code code {
   display: block;
 }
+div.menu {
+  position: fixed;
+  display: inline-block;
+  right: 0;
+  bottom: 5px;
+  width: 80px;
+  z-index: 10;
+  background: rgb(50, 100,250);
+  color: white;
+  padding: 20px 15px;
+  overflow: hidden;
+  content: 'menu';
+}
+div.menu span.title {
+  color:white;
+}
+div.menu a {
+  color:white;
+  display: none;
+}
+div.menu:hover {
+  width: 20%;
+}
+div.menu:hover a {
+  display: block;
+}
+div.menu {
+  transition: all 0.5s ease;
+}
