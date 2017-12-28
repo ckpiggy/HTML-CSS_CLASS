@@ -10,6 +10,13 @@
       .demo-zone .output, .demo-zone .input{
         min-height: 200px;
       }
+      table.example, table.example th, table.example td {
+        padding: 5px 10px;
+        border: solid 1px black;
+      }
+      table.example {
+        border-collapse: collapse;
+      }
     </style>
   </head>
   <body>
@@ -25,7 +32,6 @@
           <li><p><a href="#list">清單</a></p></li>
           <li><p><a href="#em">加強語氣</a></p></li>
           <li><p><a href="#table">表格</a></p></li>
-          <li><p><a href="#form">表單</a></p></li>
         </ol>
       </header>
       <main>
@@ -122,10 +128,116 @@
           但網頁的作者不該將&lt;em&gt;與&lt;i&gt;混用，因為兩者的<strong>語意</strong>是不一樣的。
           同理，雖然&lt;strong&gt;元素和&lt;b&gt;元素都能夠將字體加粗，但也不該混用。
         </p>
-        <h3><a name="table_form">表格與表單</a></h3>
+        <h4>動手做看看</h4>
+        <div id="demo3"></div>
+        <h3><a name="table">表格</a></h3>
         <p>
-          除了之前介紹的文字語意相關的元素，還有兩個常見元素分別是表格&lt;table&gt;和表單&lt;form&gt;元素。
+          表格&lt;table&gt;可以用來呈現結構式資料，讓使用者可以快速的瀏覽資料內容。例如
         </p>
+        <table class="example">
+          <tr>
+            <th></th>
+            <th>名字</th>
+            <th>電話</th>
+            <th>地址</th>
+          </tr>
+          <tr>
+              <th>1</th>
+              <td>王小明</td>
+              <td>0987654321</td>
+              <td>台北市信義區信義路五段XX號三樓</td>
+          </tr>
+          <tr>
+              <th>2</th>
+              <td>陳小強</td>
+              <td>0912345678</td>
+              <td>台北市信義區信義路五段XX巷XX弄XX號十樓</td>
+          </tr>
+        </table>
+        <p>
+          &lt;table&gt;使用上稍微複雜一些，首先&lt;table&gt;內必須用&lt;tr&gt;元素來新增一列，
+          接著在&lt;tr&gt;內插入&lt;td&gt;來新增儲存格。例如：
+        </p>
+        <div class="code">
+          <code>&lt;table&gt;</code>
+          <code>&nbsp;&nbsp;&lt;tr&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;1&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;王小明&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;0987654321&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;台北市信義區信義路五段XX號三樓&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&lt;/tr&gt;</code>
+          <code>&nbsp;&nbsp;&lt;tr&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;2&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;陳小強&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;0912345678&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;台北市信義區信義路五段XX巷XX弄XX號十樓&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&lt;/tr&gt;</code>
+          <code>&lt;/table&gt;</code>
+        </div>
+        <h4>動手做看看</h4>
+        <div id="demo4"></div>
+        <p>
+          等等，為什麼我自己動手做的表格樣式怪怪的？因為table元素需要使用css或js等方式來變更表格格式，
+          剛剛看到的範例格式是我用css調整的。此外有&lt;th&gt;元素可以用來當作表頭，我們試著在剛剛的代碼內加入&lt;th&gt;。
+        </p>
+        <div class="code">
+          <code>&lt;table&gt;</code>
+          <code>&nbsp;&nbsp;&lt;tr&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;&lt;/th&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;姓名&lt;/th&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;電話&lt;/th&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;地址&lt;/th&gt;</code>
+          <code>&nbsp;&nbsp;&lt;/tr&gt;</code>
+          <code>&nbsp;&nbsp;&lt;tr&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;1&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;王小明&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;0987654321&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;台北市信義區信義路五段XX號三樓&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&lt;/tr&gt;</code>
+          <code>&nbsp;&nbsp;&lt;tr&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;2&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;陳小強&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;0912345678&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;台北市信義區信義路五段XX巷XX弄XX號十樓&lt;/td&gt;</code>
+          <code>&nbsp;&nbsp;&lt;/tr&gt;</code>
+          <code>&lt;/table&gt;</code>
+        </div>
+        <h4>何時使用table元素</h4>
+        <p>
+          &lt;table&gt;可以用來呈現結構化的資料，但在古早之前很多網頁用&lt;table&gt;元素來做網頁配置，
+          因為那時瀏覽器的css整合性不佳。現在網頁設計師不該再使用&lt;table&gt;元素來進行結構配置，原因如下：
+        </p>
+        <ol>
+          <li>
+            <div>
+              <h4>使用table元素來配置網頁結構對視障使用者不友善</h4>
+              <p>
+                市面上的Screenreader會利用HTML的語意結構來進行朗讀，如果用table來進行元素配置，
+                除了會讓原本的HTML結構更複雜以外，也會讓Screenreader讀出的內容變得牛頭不對馬嘴。
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>table元素會讓你的HTML結構變得更複雜</h4>
+              <p>
+              如上述，table元素會產生很多額外的HTML標籤，讓你的代碼變得更難以閱讀。
+              所有的代碼與程式碼，只會被寫出一次，卻會被閱讀很多次（越長壽的專案越是如此），所以代碼的可讀性非常的重要！
+              使用table元素進行結構配置的成本遠遠高於效益。
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>table元素在適應不同寬的的螢幕時較費工夫</h4>
+              <p>
+                相較於正常用來做網頁配置的元素（例如：&lt;header&gt;、&lt;section&gt;、&lt;article&gt;與&lt;div&gt;），
+                他們的預設寬度是父元素的100%寬度，所以在不同寬度的螢幕上有較佳的適應性，但是table的預設寬度是顯示內容的
+                需要做額外的設定。
+              </p>
+            </div>
+          </li>
+        </ol>
       </main>
     </article>
     <script>
@@ -153,6 +265,10 @@
         煮熟上桌
         `
       ))
+      var demo3 = document.querySelector('#demo3')
+      demo3.appendChild(actCreateHtmlDemoZone(''))
+      var demo4 = document.querySelector('#demo4')
+      demo4.appendChild(actCreateHtmlDemoZone(''))
     </script>
   </body>
 </html>

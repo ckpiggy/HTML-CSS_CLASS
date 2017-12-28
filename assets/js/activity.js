@@ -31,7 +31,6 @@ function createHoverMenu (anchorsSelector) {
     var clone = document.createElement('a');
     clone.innerText = a.innerText;
     clone.href = a.href;
-    console.log(clone);
     targets.push(clone)
   })
   var menu = document.createElement('div');
