@@ -32,11 +32,11 @@
     <article>
       <header>
         <h3>你將會學到：</h3>
-        <ol>
-          <li><p>為網頁加入標題</p></li>
-          <li><p>為網頁加入專屬icon</p></li>
-          <li><p>為網頁關鍵字等資料</p></li>
-          <li><p>為網頁加入js與css</p></li>
+        <ol id="index">
+          <li><p><a href="#add_title">為網頁加入標題</a></p></li>
+          <li><p><a href="#add_icon">為網頁加入專屬icon</a></p></li>
+          <li><p><a href="#keyword">為網頁加入描述等資料</a></p></li>
+          <li><p><a href="#css_js">為網頁加入js與css</a></p></li>
         </ol>
       </header>
       <main>
@@ -150,14 +150,9 @@
       </main>
     </article>
     <script>
-      var menu = createHoverMenu([
-          {label: '為網頁加入標題', href: '#add_title'},
-          {label: '為網頁加入專屬icon', href: '#add_icon'},
-          {label: '為網頁關鍵字等資料', href: '#keyword'},
-          {label: '為網頁加入js與css', href: '#css_js'}
-        ]);
-      var body = document.getElementsByTagName('body')[0];
-      body.appendChild(menu);
+      (function () {
+        createHoverMenu('#index a');
+      })()
     </script>
   </body>
 </html>

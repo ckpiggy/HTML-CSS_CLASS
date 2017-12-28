@@ -30,7 +30,7 @@ div.menu {
   bottom: 5px;
   width: 80px;
   z-index: 10;
-  background: rgb(50, 100,250);
+  background: rgba(50, 100,250, 0.8);
   color: white;
   padding: 20px 15px;
   overflow: hidden;

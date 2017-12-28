@@ -33,13 +33,12 @@
         <h2>前言</h2>
         <p>以下所稱HTML指的都是HTML5，課程的教材全部都是由HTML、css與js撰寫。</p>
         <h3>這堂課中你應該學到：</h3>
-        <ol>
-          <li><p>什麼是HTML</p></li>
-          <li><p>HTML文件如何閱讀</p></li>
-          <li><p>HTML元素種類</p></li>
-          <li><p>如何為HTML元素加上屬性</p></li>
-          <li><p>安裝開發工具</p></li>
-          <li><p>使用開發工具</p></li>
+        <ol id="index">
+          <li><p><a href="#what_is_html">什麼是HTML</a></p></li>
+          <li><p><a href="#how_to_read">HTML文件如何閱讀</a></p></li>
+          <li><p><a href="#html_kind">HTML元素種類</a></p></li>
+          <li><p><a href="#attr">如何為HTML元素加上屬性</a></p></li>
+          <li><p><a href="#tool">安裝並使用開發工具</a></p></li>
         </ol>
       </header>
       <main>
@@ -164,15 +163,7 @@
         demo4.appendChild(actCreateHtmlDemoZone('<a target="_blank">go google</a>'))
         var demo5 = document.querySelector('#demo5')
         demo5.appendChild(actCreateHtmlDemoZone('<input>'))
-        var menu = createHoverMenu([
-          {label: '什麼是HTML', href: '#what_is_html'},
-          {label: 'HTML文件如何閱讀', href: '#how_to_read'},
-          {label: 'HTML元素種類', href: '#html_kind'},
-          {label: '如何為HTML元素加上屬性', href: '#attr'},
-          {label: '安裝並使用開發工具', href: '#tool'}
-        ]);
-        var body = document.getElementsByTagName('body')[0];
-        body.appendChild(menu);
+        createHoverMenu('#index a');
       })()
     </script>
   </body>

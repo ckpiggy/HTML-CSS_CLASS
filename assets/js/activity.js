@@ -14,7 +14,7 @@ function actCreateHtmlDemoZone (defaultText) {
   input.addEventListener('input', function (e) {
     output.innerHTML = e.target.value
   })
-  input.innerText = defaultText
+  input.value = defaultText
   output.innerHTML = defaultText
   zone.className = 'demo-zone'
   inputTitle.className = 'title'
@@ -24,21 +24,25 @@ function actCreateHtmlDemoZone (defaultText) {
   return zone
 }
 
-function createHoverMenu (items) {
-  var anchors = items.map(function (item) {
-    var a = document.createElement('a');
-    a.innerText = item.label;
-    a.href = item.href
-    return a
-  });
+function createHoverMenu (anchorsSelector) {
+  var anchors = document.querySelectorAll(anchorsSelector);
+  var targets = [];
+  anchors.forEach(function (a) {
+    var clone = document.createElement('a');
+    clone.innerText = a.innerText;
+    clone.href = a.href;
+    console.log(clone);
+    targets.push(clone)
+  })
   var menu = document.createElement('div');
   var title = document.createElement('span')
   title.textContent = 'MENU';
   title.className = 'title';
   menu.className = 'menu';
   menu.appendChild(title)
-  anchors.forEach(function (a) {
+  targets.forEach(function (a) {
     menu.appendChild(a);
   });
-  return menu;
+  var body = document.getElementsByTagName('body')[0];
+  body.appendChild(menu);
 }

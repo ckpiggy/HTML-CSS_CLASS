@@ -1,0 +1,158 @@
+<html lang="zh-cmn">
+  <head>
+    <title>HTML基礎排版</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/activity.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <style>
+      .demo-zone .output, .demo-zone .input{
+        min-height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <p>
+          HTML其中一個重要的功能就是讓文字結構化，並且依照語意標示讓瀏覽器可以正確顯示。
+          我們將會在以下的教學中解釋HTML是如何將文字結構化，並且實際操作為文字加上標題、段落等標籤。
+        </p>
+        <h3>你將會學到：</h3>
+        <ol id="index">
+          <li><p><a href="#head_p">標題與段落</a></p></li>
+          <li><p><a href="#list">清單</a></p></li>
+          <li><p><a href="#em">加強語氣</a></p></li>
+          <li><p><a href="#table">表格</a></p></li>
+          <li><p><a href="#form">表單</a></p></li>
+        </ol>
+      </header>
+      <main>
+        <h3><a name="head_p">標題與段落</a></h3>
+        <p>
+          在一般的文字內容中，最常見的就是標題與段落。將文字加上標題與段落方便使用者閱讀。
+        </p>
+        <p>在HTML中用&lt;p&gt;元素把段落包覆起來，瀏覽器就會套用段落格式在這段文字上，如以下示範：</p>
+        <div class="code">
+          <code>&lt;p&gt;這是一個段落，段落內容...&lt;/p&gt;</code>
+        </div>
+        <p>在HTML中標題有六種標籤分別是&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;、&lt;h4&gt;、&lt;h5&gt;與&lt;h6&gt;
+          分別代表不同等級的標題。&lt;h1&gt;代表的是主標題，&lt;h2&gt;次之依此類推。例如：
+        </p>
+        <div class="code">
+            <code>&lt;h1&gt;這是一個標題&lt;/h1&gt;</code>
+        </div>
+        <h4>動手做看看！</h4>
+        <p>將以下的文字加上標題與段落，讓使用者更一目瞭然。</p>
+        <div id="demo1"></div>
+        <h3><a name="list">清單</a></h3>
+        <p>
+          有些資料需要條列式的顯示，這時候我們需要用清單，HTML的清單分為兩種：
+        </p>
+        <ul>
+          <li>
+            <div>
+              <h4>有序清單</h4>
+              <p>有序清單&lt;ol&gt;用來表示順序性的資料，例如使用步驟、食譜的工序等等。</p>
+              <div class="code">
+                <code>&lt;ol&gt;</code>
+                <code>&emsp;&emsp;&lt;li&gt;走到信義路松仁路交叉口&lt;/li&gt;</code>
+                <code>&emsp;&emsp;&lt;li&gt;右轉松仁路&lt;/li&gt;</code>
+                <code>&emsp;&emsp;&lt;li&gt;直走到信義國中&lt;/li&gt;</code>
+                <code>&lt;/ol&gt;</code>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>無序清單</h4>
+              <p>無序清單&lt;ul&gt;用來表示無順序性的資料，例如待辦事項、產品成分等。</p>
+              <div class="code">
+                <code>&lt;ul&gt;</code>
+                <code>&emsp;&emsp;&lt;li&gt;豬里肌&lt;/li&gt;</code>
+                <code>&emsp;&emsp;&lt;li&gt;白米&lt;/li&gt;</code>
+                <code>&emsp;&emsp;&lt;li&gt;皮蛋&lt;/li&gt;</code>
+                <code>&lt;/ul&gt;</code>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <h4>動手做看看！</h4>
+        <p>將以下的文字套上HTML標籤，讓顯示出來的內容更好讀。</p>
+        <div id="demo2"></div>
+        <p>此外清單也可以是巢狀的（清單包著清單）</p>
+        <div class="code">
+            <code>&lt;ol&gt;</code>
+            <code>&emsp;&emsp;&lt;li&gt;起床&lt;/li&gt;</code>
+            <code>&emsp;&emsp;&lt;li&gt;工作</code>
+            <code>&emsp;&emsp;&emsp;&emsp;&lt;ul&gt;</code>
+            <code>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;客戶會議&lt;/li&gt;</code>
+            <code>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;產品規格書&lt;/li&gt;</code>
+            <code>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;debug&lt;/li&gt;</code>
+            <code>&emsp;&emsp;&emsp;&emsp;&lt;/ul&gt;</code>
+            <code>&emsp;&emsp;&lt;/li&gt;</code>
+            <code>&emsp;&emsp;&lt;li&gt;回家&lt;/li&gt;</code>
+            <code>&lt;/ol&gt;</code>
+        </div>
+        <h3><a name="em">加強語氣</a></h3>
+        <p>
+          日常生活中有很多的詞句會因為語氣不同而有不同不同的意義，或者有時候我們想要加強某些字眼，
+          我們就可以用到HTML提供的語意元素讓閱讀者明白我們的用意。
+        </p>
+        <p>...很高興能見到你!...</p>
+        <p>...很<em>高興</em>能見到你!...</p>
+        <p>
+          雖然根據上下文，閱讀者可能可以推敲出這邊的<q>高興</q>可能別有用意，
+          但藉由&lt;em&gt;元素來加強<q>高興</q>這兩個字可以讓效果更明顯。
+        </p>
+        <p>
+          除了&lt;em&gt;元素以外，&lt;strong&gt;元素可以用來加強重點，目前瀏覽器會用加粗字體的方式表示，例如：
+        </p>
+        <div class="code">
+            <code>&lt;p&gt;這是&lt;strong&gt;有毒&lt;/strong&gt;溶劑&lt;/p&gt;</code>
+        </div>
+        <p>這是<strong>有毒</strong>溶劑</p>
+        <div class="code">
+            <code>&lt;p&gt;明天&lt;strong&gt;下午三點&lt;/strong&gt;開會&lt;/p&gt;</code>
+        </div>
+        <p>明天<strong>下午三點</strong>開會</p>
+        <p>
+          雖然&lt;em&gt;元素產生的效果和直接修改css把字體變成斜體或是使用&lt;i&gt;元素是一樣的，
+          但網頁的作者不該將&lt;em&gt;與&lt;i&gt;混用，因為兩者的<strong>語意</strong>是不一樣的。
+          同理，雖然&lt;strong&gt;元素和&lt;b&gt;元素都能夠將字體加粗，但也不該混用。
+        </p>
+        <h3><a name="table_form">表格與表單</a></h3>
+        <p>
+          除了之前介紹的文字語意相關的元素，還有兩個常見元素分別是表格&lt;table&gt;和表單&lt;form&gt;元素。
+        </p>
+      </main>
+    </article>
+    <script>
+      createHoverMenu('#index a');
+      var demo1 = document.querySelector('#demo1')
+      demo1.appendChild(actCreateHtmlDemoZone(`
+        學習HTML
+        為什麼要學習HTML？因為HTML是網頁設計的根本。就像包裝設計師要了解包材、平面設計師要了解紙張一樣，網頁設計師怎麼能不懂HTML呢？
+        在本課堂學習HTML最重要的是聽課，然後動手做看看。千萬不要在課堂上抄筆記，比起抄筆記聽懂和發問更重要...
+      `))
+      var demo2 = document.querySelector('#demo2')
+      demo2.appendChild(actCreateHtmlDemoZone(
+        `
+        皮蛋瘦肉粥
+        製作皮蛋瘦肉粥需要以下材料：
+        豬里肌
+        皮蛋
+        白米
+        製作工序：
+        前一天先將白米冰入冷凍庫
+        洗米
+        將米飯倒入鍋中
+        加入1:7的水量
+        處理豬肉
+        煮熟上桌
+        `
+      ))
+    </script>
+  </body>
+</html>
