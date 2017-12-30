@@ -1,0 +1,71 @@
+<html lang="zh-cmn">
+  <head>
+    <title>HTML及網站架構</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/activity.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <style>
+      .demo-zone .output, .demo-zone .input{
+        min-height: 200px;
+      }
+      table.example, table.example th, table.example td {
+        padding: 5px 10px;
+        border: solid 1px black;
+      }
+      table.example {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p>
+        一個網站是由許多的網頁構成，好的網頁配置讓使用者更容易操作，創造更好的使用體驗。
+      </p>
+      <h3>你將會學到：</h3>
+      <ol id="index">
+        <li><p><a href="#section">網頁基礎區段與結構配置</a></p></li>
+        <li><p><a href="#example">配置範例</a></p></li>
+        <li><p><a href="#em">規劃一個簡單的網頁</a></p></li>
+      </ol>
+    </header>
+    <main>
+      <h3>網頁基礎區段與結構配置</h3>
+      <p>
+        我們在之前提到不要用table元素做網頁結構的配置，在這邊我們將介紹適合用來做網頁配置的元素。
+        通常網頁會包以下元素：
+      </p>
+      <dl>
+        <dt><h4>header</h4></dt>
+        <dd>在header中通常會放至網站的Logo或是一些主要/通用訊息，通常在整個網站中所有網頁的header都應該是一致的。</dd>
+        <dt><h4>nav</h4></dt>
+        <dd>
+          nav元素代表的是navigation bar也就是整個網站的導覽UI，可以是選單、按鈕、tab等形式，讓使用者可以在網站的各個網頁內跳轉。
+          nav元素和header一樣，通常在整個網站中的所有網頁的nav都應該要是一致的，否則很容易造成使用者個困擾。
+          nav元素可以放在header內也可以獨立出來，這完全取決於網頁設計師的喜好。
+        </dd>
+        <dt><h4>main</h4></dt>
+        <dd>
+          main用來放置網站的主要內容，通常是在網頁中央最顯眼的地方，內容可以是部落格的文章、影音網站的影片、購物網站的商品等等，
+          這個元素的內容完全取決於這個網頁的主要功能是什麼。
+        </dd>
+        <dt><h4>aside</h4></dt>
+        <dd>
+          aside用來放置與main相關的其他內容，可以是連結、註解或引用文章出處等。例如新聞網頁的aside就可以放置作者資訊或相關文章連結等內容。
+        </dd>
+        <dt><h4>footer</h4></dt>
+        <dd>
+          通常放在網頁最底部，角色類似header，用來放置網站的通用資訊，
+          但是放置的資訊大多比較次要。例如：版權宣告、聯絡資訊等。
+          有時候會因為SEO的考量將熱門內容的連結也放在此。
+        </dd>
+      </dl>
+
+    </main>
+    <script>
+      createHoverMenu('#index a');
+    </script>
+  </body>
+</html>
