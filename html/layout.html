@@ -17,6 +17,10 @@
       table.example {
         border-collapse: collapse;
       }
+      iframe.example {
+        width: 95%;
+        height: 600px;
+      }
     </style>
   </head>
   <body>
@@ -32,7 +36,7 @@
       </ol>
     </header>
     <main>
-      <h3>網頁基礎區段與結構配置</h3>
+      <h3><a name="section">網頁基礎區段與結構配置</a></h3>
       <p>
         我們在之前提到不要用table元素做網頁結構的配置，在這邊我們將介紹適合用來做網頁配置的元素。
         通常網頁會包以下元素：
@@ -62,7 +66,17 @@
           有時候會因為SEO的考量將熱門內容的連結也放在此。
         </dd>
       </dl>
-
+      <h3><a name="example">配置範例</a></h3>
+      <p>
+        通常一個網頁除了區段html以外，還需要css讓整個網頁更好看（畢竟只靠我們之前說的三種元素很難讓滿足現代網頁使用者的胃口）。
+        html是網頁的骨幹，它包含了網頁的語意資訊與metadata，讓搜尋引擎、瀏覽器、社群軟體等有效的存取網頁資訊。
+        css決定了網頁的外觀，他可以完全客製化html元素的呈現方式！以下我們用簡單的範例來解釋兩者如何併用。
+      </p>
+      <iframe class="example" src="./examples/layout-example-ans.html"></iframe>
+      <p>
+        上面的範例網頁用了html與css配合，若少了css的配合就會是以下的樣子。
+      </p>
+      <iframe class="example" src="./examples/layout-example-act.html"></iframe>
     </main>
     <script>
       createHoverMenu('#index a');
