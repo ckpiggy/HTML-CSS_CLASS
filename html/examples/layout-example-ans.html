@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-comn">
+<head>
+  <meta charset="utf-8" />
+  <title>租屋網</title>
+  <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./normalize.css"/>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: white;
+      line-height: 150%;
+    }
+    button {
+      background: none;
+      padding: 5px 15px;
+      border: none;
+      cursor: pointer;
+    }
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      position: fixed;
+      box-shadow: 1px 0 2px black;
+      z-index: 100;
+      width: 100%;
+      height: 60px;
+      background: white;
+    }
+    main {
+      position: relative;
+      top: 60px;
+    }
+    
+    .logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .navigation {
+      display: inline-flex;
+      width: 300px;
+      margin-left: auto;
+      justify-content: space-around;
+    }
+    .navigation button {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .hero {
+      height: 600px;
+      position: relative;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%; 
+      object-position: center;
+    }
+    .hero div {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translateX(-50%);
+      filter: none;
+      color: white;
+    }
+    .hero div h1 {
+      font-size: 36px;
+    }
+    .img-left {
+      display: flex;
+      justify-content: flex-start;
+      padding: 40px 5px 20px 40px;
+    }
+    .img-left img, .img-right img{
+      width: 45%;
+      height: 100%;
+      object-position: center;
+      filter: grayscale(0.4);
+      border-radius: 10px;
+    }
+    .img-left div {
+      width: 30%;
+      margin-left: 30px;
+    }
+    .img-right {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      padding: 40px 40px 20px 5px;
+    }
+    .img-right div {
+      width: 30%;
+      margin-right: 30px;
+    }
+    footer {
+      position: relative;
+      top: 60px;
+    }
+    .contact {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      background-color: rgb(150, 220, 255);
+    }
+    .contact form {
+      height: 450px;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: center;
+      padding: 40px 30px;
+      background-color: white;
+      margin: 40px;
+      border-radius: 20px;
+    }
+    .contact form .title {
+      text-align: center;
+      font-size: 30px;
+    }
+    .contact form label {
+      display: block;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .contact form textarea {
+      height: 100px;
+    }
+    .contact form button {
+      align-self: flex-end;
+      border: solid 1px gray;
+      border-radius: 5px;
+    }
+    .inform {
+      height: 40px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="logo">
+      <img src="./ex_logo.png"/>
+    </button>
+    <nav class="navigation">
+      <button>關於我們</button>
+      <button>房型介紹</button>
+      <button>聯絡我們</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <img src="./bg1.jpg">
+      <div>
+        <h1>
+          只租最好的
+        </h1>
+      </div>
+    </section>
+    <section class="img-left">
+      <img src="./bg2.jpg">
+      <div>
+        <h3>我水風開對如現政以值</h3>
+        <p>
+            在陽還人力……備字他社是們，車明日看然熱地花驚風性片以食自很弟劇一請共因時星也。這一去一內路。方國個開第代！
+            發友她治定力者相世遊見萬城。而沒們轉了始情克打、能之讀是市死花需庭道公上選們如然王吃神，友史然著發去收產西高、
+            聲是戲持國就，岸親合、而球能人北本全人到……相談學頭里背資我能：舞好就營發為來留，上機入，院成來但倒藥出會會賽局，
+            初像才以自一死地來看種好紀沒軍合。一因官論。小或館地上地面英如大字也，和演據面賣大又為前問常。直總列當部動的了了
+            待張做聲們好，可素那文除開臺少食且歡實營黨外的進發。
+        </p>
+      </div>
+    </section>
+    <section class="img-right">
+      <img src="./bg3.jpg"/>
+      <div>
+        <h3>量他些勢吃你合國型</h3>
+        <p>
+          改稱以平作童！只人間圖夠！
+          之民來處！西年語！對世三息重服市爸年行投美，我邊有長開別制而一然後近公不說聲，節電福？
+          白類呢只白有交人一！務想在三立把所事來聲區用認而樂數知路非，整好少一銷些。灣區出試地少去觀藥離為活門……很手車心！著因直都連一了出我力因把的色發的理人從記因……利法身花……實習一命我都到不他星家度。
+          放親不各年著！期人定就……受沒年立們提知一爭！
+          斷一兒前，洋主行來可了為間院量動告心？到我重？
+          關受亞也說陽又生？流希一處中起現動？轉理民用成們前化他營法此高南，統上文高媽不方，操治始是得，如本的年所使家要？            
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <section class="contact">
+      <form>
+        <h2 class="title">聯絡我們</h2>
+        <label>姓名</label><input type="text"/>
+        <label>電話</label><input type="phone"/>
+        <label>訊息</label><textarea></textarea>
+        <button>送出</button>
+      </form>
+    </section>
+    <section class="inform">
+      <p>&copy; 2017 A-Event</p>
+      <p>聯絡電話：02-2722-1600</p>
+      <p>地址：台北市信義區信義路5段150巷16弄16號</p>
+    </section>
+  </footer>
+</body>
+</html>
