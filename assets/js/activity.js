@@ -1,7 +1,7 @@
 function actCreateHtmlDemoZone (defaultText) {
   var zone = document.createElement('div')
   var inputTitle = document.createElement('h2')
-  inputTitle.innerText = 'Input'
+  inputTitle.innerText = 'Input HTML'
   var input = document.createElement('textarea')
   input.className = 'act-input'
   var outputTitle = document.createElement('h2')
@@ -21,6 +21,37 @@ function actCreateHtmlDemoZone (defaultText) {
   outputTitle.className = 'title'
   input.className = 'input'
   output.className = 'output'
+  return zone
+}
+
+function actCreateCSSDemoZone (defaultHTML, defaultCSS) {
+  function processedCSS (id, css) {
+    var items = css.split('}')
+    .filter(function (item) {
+      return item.length > 0;
+    })
+    .map(function (item) {
+      return `#${id} .output ${item} }`;
+    });
+    return items.join('\n');
+  }
+  var zone = actCreateHtmlDemoZone(defaultHTML);
+  zone.id = new Date().getTime().toString(36) + parseInt(Math.random() * 1000).toString();
+  var inputTitle = document.createElement('h2');
+  inputTitle.innerText = 'Input CSS';
+  var input = document.createElement('textarea');
+  input.className = 'act-input';
+  var style = document.createElement('style');
+  zone.insertBefore(input, zone.childNodes[0]);
+  zone.insertBefore(inputTitle, zone.childNodes[0]);
+  zone.insertBefore(style, zone.childNodes[0]);
+  input.addEventListener('input', function (e) {
+    style.textContent = processedCSS(zone.id, e.target.value); 
+  });
+  style.textContent = processedCSS(zone.id, defaultCSS);
+  input.innerHTML = defaultCSS;
+  inputTitle.className = 'title';
+  input.className = 'input';
   return zone
 }
 
