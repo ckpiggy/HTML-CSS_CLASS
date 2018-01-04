@@ -9,7 +9,7 @@ div.demo-zone {
 div.demo-zone .input, div.demo-zone .output {
   width: 580px;
   height: 100px;
-  resize: none;
+  resize: vertical;
   overflow: auto;
   box-shadow: 1px 1px 2px black;
   font-size: 16px;
@@ -19,9 +19,23 @@ div.code {
   padding: 10px;
   background: black;
   color: white;
+  font-family: monospace;
 }
 div.code code {
   display: block;
+}
+div.code textarea {
+  font-family: monospace;
+  height: 100%;
+  resize: none;
+  background: none;
+  overflow: hidden;
+  border: none;
+  color: white;
+  width: 100%;
+}
+div.code textarea:focus {
+  box-shadow: none;
 }
 div.menu {
   position: fixed;

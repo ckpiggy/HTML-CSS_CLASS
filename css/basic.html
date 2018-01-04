@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-comn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/activity.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <style>
+    body {
+      padding: 20px 10%;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p>我們之前在HTML課程最後看到CSS對於網頁layout的巨大影響力，現在我們就來一探究竟吧！</p>
+      <h3>你將會學到 </h3>
+      <ol id="index">
+        <li><p><a href="#what_is_css">什麼是CSS</a></p></li>
+        <li><p><a href="#how_css_work">CSS如何作用</a></p></li>
+        <li><p><a href="#html_css">如何在html檔中使用CSS</a></p></li>
+      </ol>
+    </header>
+    <main>
+      <h3><a name="what_is_css">什麼是CSS</a></h3>
+      <p>
+        CSS(Cascading Style Sheets)讓瀏覽器知道該如何呈現你的文件（這裡的文件指的是標籤語言組成的文件例如：HTML, SVG, XML），
+        而瀏覽器的功用在於將文件視覺化使它可以呈現在螢幕、投影機或印表機上。
+      </p>
+      <h3><a name="how_css_work">CSS如何作用</a></h3>
+      <p>
+        瀏覽器會將CSS rule套用在文件上，讓文件的顯示外觀發生變化，
+        一個CSS rule包含兩個部分：</p>
+      <ol>
+        <li>
+          <div>
+            <h4>選擇器</h4>
+            <p>
+                告訴瀏覽器，哪些元素會受到這條規則的控制。
+                選擇器會影響到瀏覽器套用CSS rule的效率，
+                詳細的內容我們之後會探討。
+            </p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>影響的屬性與數值</h4>
+            <p>
+              告訴瀏覽器這條CSS rule要更改的屬性有哪些，
+              要改成什麼數值。
+            </p>
+          </div>
+        </li>
+      </ol>
+      <h3>動手做看看！</h3>
+      <p>
+        下面是兩個CSS rule，分別影響output文件的h3和p元素，
+        影響的屬性分別是：
+        <ul>
+          <li>
+            <div>
+              <h4>h3</h4>
+              <p>
+                將標籤內容的顏色設為白色，並將標籤的背景色設為黑色。
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>p</h4>
+              <p>
+                將標籤內容的顏色設為藍色。
+              </p>
+            </div>
+          </li>
+        </ul>
+        試著動手把h3的地色調整成綠色，把p的顏色換成紅色。
+      </p>
+      <div id="demo1"></div>
+      <h3>瀏覽器如何處理CSS</h3>
+      <p>
+        當瀏覽器要顯示一個文件之前，它會將文件內容與style資訊合併成DOM(document object model)，再依照DOM的內容顯示給使用者看。
+        至於DOM的細節，我們不在此敘述，等到之後有機會在瀏覽器上使用Javascript時再談比較適合。
+      </p>
+      <img src="https://mdn.mozillademos.org/files/11781/rendering.svg"/>
+      <h3><a name="html_css">如何在html檔中使用CSS</a></h3>
+      
+    </main>
+    
+    <script>
+      (function(){
+        createHoverMenu('#index a');
+        var demo1 = document.querySelector('#demo1')
+        var css1 = 
+`h3 {
+  color: white;
+  background: black;
+}
+p {
+  color: blue;
+}`
+        var html1 = 
+`<h3>哈囉你好</h3>
+<p>這是你第一次寫CSS嗎？</p>`
+        demo1.appendChild(actCreateCSSDemoZone(html1, css1));
+      })()
+    </script>
+  </body>
+</html>
