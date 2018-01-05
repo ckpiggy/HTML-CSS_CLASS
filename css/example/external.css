@@ -1,0 +1,11 @@
+#greet {
+  font-size: 30px;
+  font-weight: bolder;
+  background: rgb(150, 200, 255);
+  padding: 20px;
+}
+#msg {
+  padding: 10px 40px;
+  background: black;
+  color: white;
+}
