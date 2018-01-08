@@ -3,12 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon"/>
     <title>CSS選擇器</title>
     <script src="../assets/js/activity.js"></script>
     <link rel="stylesheet" href="../assets/css/main.css"/>
     <style>
     body {
       padding: 20px 10%;
+    }
+    .snippet {
+      background-color: lightgray;
+    }
+    .attr-list li {
+      margin: 10px 0;
     }
     </style>
   </head>
@@ -22,17 +29,199 @@
       <ol id="index">
         <li><p><a href="#simple">Simple selector 簡單選擇器</a></p></li>
         <li><p><a href="#attribute">Attribute selector 屬性選擇器</a></p></li>
-        <li><p><a href="#pseudo">Pseudo selector 虛擬選擇器</a></p></li>
+        <li><p><a href="#pseudo">Pseudo class 虛擬類別</a></p></li>
+        <li><p><a href="#combind">組合式選擇器</a></p></li>
       </ol>
     </header>
-    <article>
-      <h3>Simple selector 簡單選擇器</h3>
+    <main>
+      <p>
+        我們直接用範例來看，請打開<code>/css/example/selector.html</code>檔案。
+        在這個檔案中我們從外部引入三個css檔案，分別是<code>simple-selector.css</code>，
+        <code>attr-selector.css</code>和<code>pseudo-selector.css</code>。
+      </p>
+      <h3><a name="simple">Simple selector 簡單選擇器</a></h3>
       <p>
         這類選擇器之所以稱作<q>簡單</q>是因為它們直接對應到tag name, class 或 id。讓人很直覺的可以使用，這也是使用率最高的選擇器。
+        打開simple-selector.css，裡面示範了三種selector語法，分別針對tag name, class與id。
       </p>
-    </article>
+      <h3><a name="attribute">Attribute selector 屬性選擇器</a></h3>
+      <p>
+        屬性選擇器可以針對tag的屬性選擇，html標籤允許網頁設計師自訂屬性名稱與屬性值，在範例裡面的<code>sel-type</code>
+        與<code>fruit</code>，<code>tast</code>，<code>vegitable</code>都是自訂屬性。
+        打開attr-selector.css可以看到範例中的屬性選擇。
+      </p>
+      <p>
+        屬性選擇器可以分為兩大類：
+      </p>
+      <h4>屬性與屬性值選擇器</h4>
+      <p>
+        這些選擇器會試著找到符合的屬性與屬性值：
+        <ul class="attr-list">
+          <li>
+            <span class="snippet">[vegitable]</span>：這會選取有vegitable這個屬性的html元素，不論這個屬性的值是什麼。
+          </li>
+          <li>
+            <span class="snippet">[vegitable="apple"]</span>：這會選擇有vegitable屬性且屬性值等於apple的html元素。
+          </li>
+          <li>
+            <span class="snippet">[tast~="brittle"]</span>：這會選擇有tast且屬性值含有brittle的html元素。例如這個元素：
+            <code>&lt;div tast="spicy brittle sweet"&gt;example ...&lt;/div&gt;</code>
+          </li>
+        </ul>
+      </p>
+      <h4>子字串值選擇器</h4>
+      <p>
+        這些選擇器有類似正規表達式的功能，可以把屬性值當作字串處理針對符合的格式選取。
+        <ul class="attr-list">
+          <li>
+            <span class="snippet">[vegitable|="apple"]</span>：這會選取有vegitable屬性
+            且屬性值等於apple或是以<span class="snippet">apple-</span>作為開頭的元素(注意<q>-</q>這個符號不可省略)。例如：
+            <code>&lt;div vegitable="apple"&gt;example ...&lt;/div&gt;</code>與
+            <code>&lt;div vegitable="apple-juice"&gt;example ...&lt;/div&gt;</code>
+          </li>
+          <li>
+            <span class="snippet">[tast^="sweet"]</span>：這會選取含有tast屬性且值是以sweet為開頭的元素。
+          </li>
+          <li>
+            <span class="snippet">[tast$="sweet"]</span>：這會選取含有tast屬性且值是以sweet為結尾的元素。
+          </li>
+          <li>
+            <span class="snippet">[tast*="sweet and sour"]</span>：這會選取含有tast屬性且值帶有
+            <q>sweet and sour</q>這個片段的元素。
+          </li>
+        </ul>
+      </p>
+      <h3><a name="pseudo">Pseudo class 虛擬類別</a></h3>
+      <p>
+        虛擬類別是必須在類別前加入<span class="snippet">:</span>然後串接在選擇器尾端，可以針對元素的狀態做選擇，例如：
+        <code class="snippet">a:hover{color:red;}</code>會選取所有a元素並且只在滑鼠經過的時候將顏色變為紅色。
+        詳細的說明可以參考
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements">
+        MDN
+        </a>的說明。
+      </p>
+      <h3><a name="combind">組合式選擇器</a></h3>
+      <p>
+        上述的選擇器和虛擬類別可以組合使用，瀏覽器閱讀組合器的方式是由右至左的，我們會在下面解釋。
+      </p>
+      <ul class="attr-list">
+        <li>
+          <div>
+            <h4>A, B</h4>
+            <p>
+              符合A或B的元素會被套用規則，例如：
+            </p>
+            <p>
+              <code class="snippet">
+                .important, h1 {
+                  font-weight: 900;
+                }
+              </code>
+            </p>
+            <p>
+              表示所有元素類別有important與所有h1元素的字重都會變成900。
+            </p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>A B</h4>
+            <p>
+              所有符合B的元素且外層有任何元素符合A的都會被套用規則，例如：
+            </p>
+            <p>
+              <code class="snippet">
+                .menu li {
+                  color: blue;
+                }
+              </code>
+            </p>
+            <p>
+              所有的li元素，只要外層的元素含有類別是menu的顏色都會被改成藍色，這是個昂貴的選擇器，
+              因為瀏覽器在第一步會找出在html中所有的li元素，之後往外層找是否有元素的類別是menu，一路找到body元素才停！
+            </p>
+            <p>
+              為了讓瀏覽器省點力氣我們可以這麼改寫：
+            </p>
+            <p>
+              <code class="snippet">
+                .menu li.item {
+                  color: blue;
+                }
+              </code>
+            </p>
+            <p>
+              所有類別為item的li元素，只要外層元素含有類別是menu的顏色都會被改成藍色，比起上一個選擇氣，
+              這個選擇器不會鎖定所有的li元素，而是只有類別為item的li元素，但是向外比對的過程一樣很艱辛，
+              如果menu類別是套用在ul或ol元素上，我們可以下面的方式改寫。
+            </p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>A > B</h4>
+            <p>
+              所有符合B的元素且外層的第一層元素符合A，都會套用規則。我們用這個方式改寫上一個組合方式遇到的問題：
+            </p>
+            <p>
+              <code class="snippet">
+                .menu > li.item {
+                  color: blue;
+                }
+              </code>
+            </p>
+            <p>
+              所有類別含有item的li元素，且外層第一層元素含有類別menu修改顏色為藍色，這樣就能避免瀏覽器一路查找到最外層的元素，
+              但前提是html的組成必須符合我們期望的結構。
+            </p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>A + B</h4>
+            <p>
+              所有符合B的元素且在同一階層下的前一個或後一個元素符合A會被套用規則。例如：
+            </p>
+            <div id="sibling1"></div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>A ~ B</h4>
+            <p>
+              所有元素符合B且在同一階層下的元素中任一元素符合A就套用規則。例如：
+            </p>
+            <div id="sibling2"></div>
+          </div>
+        </li>
+      </ul>
+      <p>
+        以上的組合器，都可以互相串接，但是為了代碼的可讀性與瀏覽器的效能，最好不要串接超過三層，
+        當然如果只要用id或class這種simple selector就能達成效果是最好的！
+      </p>
+    </main>
     <script>
       createHoverMenu('#index a');
+      var siblingHTML = 
+`<h3 class="name">超營養食譜</h3>
+<p class="prepare">在製作之前請先沈澱心情，心無雜念....</p>
+<p class="work">開工！</p>
+`
+      var siblingCSS1 = 
+`
+.name + p {
+  color: blue;
+}
+`
+      var sibleingCSS2 = 
+`.name ~ p {
+  color: blue;
+}
+`
+      var sibling1 = document.querySelector('#sibling1')
+      sibling1.appendChild(actCreateCSSDemoZone(siblingHTML, siblingCSS1))
+      var sibling2 = document.querySelector('#sibling2')
+      sibling2.appendChild(actCreateCSSDemoZone(siblingHTML, sibleingCSS2))
     </script>
   </body>
   

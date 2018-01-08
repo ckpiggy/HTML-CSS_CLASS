@@ -1,14 +1,19 @@
+/*直接選取所有的h3元素*/
 h3 {
   font-size: 30px;
 }
+/*選取id為list的元素，
+注意id selector只會討用在一個元素上！*/
 #list {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: lightblue;
 }
+/*選取所有clss為list-item的元素*/
 .list-item {
   color: rgb(80, 80, 100);
 }
+/*選取id為vegitable-list的元素*/
 #vegitable-list {
   background-color: lightgrey;
 }
