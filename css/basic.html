@@ -77,6 +77,11 @@
         試著動手把h3的地色調整成綠色，把p的顏色換成紅色。
       </p>
       <div id="demo1"></div>
+      <h3>動手做看看！</h3>
+      <p>
+        以下的css rule含有錯誤，找到並試著修復它！
+      </p>
+      <div id="demo2"></div>
       <h3>瀏覽器如何處理CSS</h3>
       <p>
         當瀏覽器要顯示一個文件之前，它會將文件內容與style資訊合併成DOM(document object model)，再依照DOM的內容顯示給使用者看。
@@ -94,7 +99,7 @@
         </li>
         <li>
           <div>
-            <h4>寫在head</h4>
+            <h4>寫在style元素裡面</h4>
             <p>請參考範例資料夾的head.html</p>
           </div>
         </li>
@@ -124,6 +129,31 @@ p {
 `<h3>哈囉你好</h3>
 <p>這是你第一次寫CSS嗎？</p>`
         demo1.appendChild(actCreateCSSDemoZone(html1, css1));
+
+        var demo2 = document.querySelector('#demo2');
+        var html2 = 
+`<h3>找出錯誤</h3>
+<p>找找看css哪裡出錯了？</p>
+<ol>
+    <li>項目一</li>
+    <li>項目二</li>
+</ol>`
+        var css2 = 
+`
+h3 {
+  color: white;
+  background: black;
+}
+p {
+  color: blue
+  background: rgb(200,200,200);
+}
+li {
+  font-weight bold
+  list-style-type:cjk-ideographic;
+}
+`
+      demo2.appendChild(actCreateCSSDemoZone(html2, css2));
       })()
     </script>
   </body>
