@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS選擇器</title>
+    <script src="../assets/js/activity.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <style>
+    body {
+      padding: 20px 10%;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p>
+        我們在<a href="./basic.html">CSS基礎知識</a>中提到，CSS的兩大部分，其中一個部分就是選擇器。
+        選擇器讓瀏覽器鎖定你想修改的元素，把你想修改的屬性套用到這些元素上。
+      </p>
+      <h3>你將會學到 </h3>
+      <ol id="index">
+        <li><p><a href="#simple">Simple selector 簡單選擇器</a></p></li>
+        <li><p><a href="#attribute">Attribute selector 屬性選擇器</a></p></li>
+        <li><p><a href="#pseudo">Pseudo selector 虛擬選擇器</a></p></li>
+      </ol>
+    </header>
+    <article>
+      <h3>Simple selector 簡單選擇器</h3>
+      <p>
+        這類選擇器之所以稱作<q>簡單</q>是因為它們直接對應到tag name, class 或 id。讓人很直覺的可以使用，這也是使用率最高的選擇器。
+      </p>
+    </article>
+    <script>
+      createHoverMenu('#index a');
+    </script>
+  </body>
+  
+</html>

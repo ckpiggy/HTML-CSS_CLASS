@@ -1,0 +1,27 @@
+[sel-type="simple"] {
+  color:darkorange;
+}
+[sel-type="attr"] {
+  color: darkcyan;
+}
+[sel-type="pseudo"] {
+  color: darkgreen;
+}
+[vegitable] {
+  color: green;
+}
+[fruit] {
+  color: rgb(100, 200, 100);
+}
+[tast*="spicy"] {
+  color: red;
+}
+[tast="sweet"] {
+  list-style-type: circle;
+}
+[tast$="brittle"] {
+  list-style-type: square;
+}
+[tast^="sweet"] {
+  list-style-type: disc;
+}

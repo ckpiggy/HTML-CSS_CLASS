@@ -1,0 +1,14 @@
+h3 {
+  font-size: 30px;
+}
+#list {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: lightblue;
+}
+.list-item {
+  color: rgb(80, 80, 100);
+}
+#vegitable-list {
+  background-color: lightgrey;
+}

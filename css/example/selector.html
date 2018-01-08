@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <title>選擇器示範</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simple-selector.css"/>
+    <link rel="stylesheet" href="attr-selector.css"/>
+    <link rel="stylesheet" href="pseudo-selector.css"/>
+  </head>
+  <body>
+    <main>
+      <h3>CSS選擇器</h3>
+      <p>選擇器可以分為以下幾種：</p>
+      <ol id="list">
+        <li>
+          <div class="list-item">
+            <h4 sel-type="simple">
+              Simple selector 簡單選擇器
+            </h4>
+            <p>
+              顧名思義就是直接針對元素的名稱、class或id選擇
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="list-item">
+            <h4 sel-type="attr">
+              Attribute selector 屬性選擇器
+            </h4>
+            <p>
+              針對含有某些屬性或屬性值的元素選擇
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="list-item">
+            <h4 sel-type="pseudo">
+              Pseudo selector 虛擬選擇器
+            </h4>
+            <p>
+              針對元素的虛擬類別選擇
+            </p>
+          </div>
+        </li>
+      </ol>
+      <p>範例蔬果列表：</p>
+      <ul id="vegitable-list">
+        <li fruit tast="sweet">番茄</li>
+        <li vegitable tast="sweet brittle">高麗菜</li>
+        <li vegitable tast="spicy brittle">辣椒</li>
+        <li fruit tast="sweet">芭樂</li>
+        <li fruit tast="sweet juicy">火龍果</li>
+        <li vegitable tast="brittle">茄子</li>
+      </ul>
+    </main>
+  </body>
+</html>
