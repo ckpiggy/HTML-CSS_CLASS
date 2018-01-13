@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon"/>
+    <title>CSS box model</title>
+    <script src="../assets/js/activity.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <style>
+    body {
+      padding: 20px 10%;
+    }
+    .snippet {
+      background-color: lightgray;
+    }
+    .caution {
+      background-color: bisque;
+    }
+    </style>
+  </head>
+  <bod>
+    <header>
+      <p>
+        box-model是CSS的layout基礎，所有的html元素都是一個矩形的box，其中包含content、padding、border和margin。
+      </p>
+      <h3>你將會學到 </h3>
+      <ol id="index">
+        <li><p><a href="#properties">Box properties 盒狀屬性</a></p></li>
+        <li><p><a href="#overflow">Overflow 超出盒子的content處理</a></p></li>
+        <li><p><a href="#bgClip">Background clip 背景裁切</a></p></li>
+        <li><p><a href="#display">Box types 盒子的種類</a></p></li>
+      </ol>
+    </header>
+    <main>
+      <h3><a name="properties">Box properties 盒狀屬性</a></h3>
+      <p>
+        所有html元素都是像下圖一樣一層一層的box，包含：content box, padding box, border box 和margin box。
+        這些box都有各自對應的CSS屬性控制。我們可以打開瀏覽器的開發者模式觀察這些box的狀況。
+      </p>
+      <img src="https://mdn.mozillademos.org/files/13647/box-model-standard-small.png"/>
+      <ul>
+        <li>
+          <div>
+            <h4><span class="snippet">width</span>與<span class="snippet">height</span></h4>
+            <p>
+              這兩個屬性影響content box的寬和高，content box內可以放置文字或是其他html元素。
+            </p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4><span class="snippet">padding</span></h4>
+            <p>
+              這個屬性掌管padding box的大小，padding box代表從content到border的距離。而padding屬性其實是
+              padding top, padding right, padding bottom, padding left的縮寫。例如：
+            </p>
+            <p>
+              <code class="snippet">
+                .my-padding {
+                  padding: 10px;
+                }
+              </code>
+              代表my-padding類別的padding top, padding right, padding bottom, padding left都設為10px。
+            </p>
+            <p>
+              <code class="snippet">
+                .my-padding {
+                  padding: 10px 20px;
+                }
+              </code>
+              代表my-padding類別的padding top, padding bottom 設為10px，padding right, padding left設為20px。
+            </p>
+            <p>
+              <code class="snippet">
+                .my-padding {
+                  padding: 10px 15px 5px 20px;
+                }
+              </code>
+              依序設定my-padding類別的padding top, right, bottom, left （順時針）的數值。
+            </p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4><span class="snippet">border</span></h4>
+            <p>
+              border代表元素的邊框，border的預設寬度是0，我們可以藉由改變border屬性來調整邊框外觀。
+              border屬性會一次調整元素的四個邊框，如果想針對各個邊框調整可以使用border-top, border-right, border-bottom, border-left。
+            </p>
+            <p>
+              <code class="snippet">
+                .my-border {
+                  border: 1px solid blue;
+                }
+              </code>
+              設定my-border類別的邊框寬度1px，邊框樣式為solid（實心），邊框顏色為藍色。
+            </p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4><span class="snippet">margin</span></h4>
+            <p>
+              margin box代表這個元素到其他元素之間的間距，和padding的語法一樣，
+              margin一樣是縮寫，設定順序一樣是由上開始順時針方向。
+            </p>
+            <p class="caution">
+              margin有一個特別的行為叫作margin collapsing，當兩個元素相接時，
+              兩個元素的間距並不是margin的加總而是最大的margin。
+            </p>
+          </div>
+        </li>
+      </ul>
+      <h3>動手做看看！</h3>
+      <p>
+        打開範例資料夾的box-model-ex.html，試著把header與main之間的距離加大1.5倍，把main與footer之間的距離縮小一半。
+      </p>
+    </main>
+  </bod>
+</html>
