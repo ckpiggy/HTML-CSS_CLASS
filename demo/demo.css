@@ -1,5 +1,6 @@
 @import url("./demo-hero.css");
 @import url("./demo-coverbox.css");
+@import url("./demo-hovercard.css");
 body {
   font-family: 'Source Sans Pro', sans-serif;
   padding: 0;
@@ -23,4 +24,28 @@ body {
   font-weight: 400;
   color:white;
   cursor: pointer;
+}
+.blue-theme {
+  background-color: #6e9ff0;
+  color: white;
+}
+.purple-theme {
+  background-color: #ce89ee;
+  color: white
+}
+.sky-theme {
+  background-color: skyblue;
+  color: white;
+}
+.green-theme {
+  background-color: #00E640;
+  color: white;
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  background-color: #e2e2e2;
+  align-items: center;
+  color: #999;
 }

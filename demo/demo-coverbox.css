@@ -23,18 +23,6 @@
   height: 100%;
   object-fit: cover;
 }
-.blue-theme {
-  background-color: #6e9ff0;
-  color: white;
-}
-.purple-theme {
-  background-color: #ce89ee;
-  color: white
-}
-.sky-theme {
-  background-color: skyblue;
-  color: white;
-}
 .box {
   position: absolute;
   top: 50%;
