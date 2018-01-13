@@ -1,0 +1,31 @@
+#hero-banner {
+  position: relative;
+  background-image: url("./bg1.jpg");
+  background-position: center;
+  height: 590px;
+}
+#hero-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(80,80,80,0.5);
+}
+#hero-text {
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#hero-title {
+  font-size: 46px;
+}
+.hero-subtitle {
+  font-size: 20px;
+  margin: 5px auto;
+  font-weight: 300;
+}
