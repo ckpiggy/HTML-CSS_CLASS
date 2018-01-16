@@ -31,3 +31,14 @@
   margin: 10px auto;
   font-weight: 300;
 }
+@media screen and (max-width: 1024px) {
+  #hero-text {
+    width: 90%;
+  }
+  #hero-title {
+    font-size: 30px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+  }
+}

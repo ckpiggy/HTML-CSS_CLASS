@@ -4,6 +4,9 @@
   align-items: center;
   height: 585px;
 }
+.reverse-box {
+  flex-direction: row-reverse;
+}
 .cover-box-title {
   width: 60%;
   height: 100%;
@@ -61,4 +64,49 @@
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .cover-box-wrapper, .reverse-box {
+    flex-direction: column;
+  }
+  .cover-box-title {
+    width: 100%;
+    height: 200px;
+  }
+  .cover-box-title h2{
+    font-size: 24px;
+    width: 90%;
+    text-align: center;
+  }
+  .cover-box-img {
+    width: 100%;
+    height: 150px;
+  }
+  .box {
+    position: static;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    transform: inherit;
+  }
+  .box-right {
+    right: auto;
+  }
+  .box-left {
+    left: auto;
+  }
+  .box-title {
+    font-size: 24px;
+  }
+  .box-detail {
+    font-size: 16px;
+    height: 110px;
+    overflow: hidden;
+  }
+  .detail {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

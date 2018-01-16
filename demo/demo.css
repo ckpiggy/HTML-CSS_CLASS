@@ -44,8 +44,15 @@ body {
 footer {
   display: flex;
   justify-content: space-around;
-  height: 100px;
+  min-height: 100px;
   background-color: #e2e2e2;
   align-items: center;
   color: #999;
+  padding: 10px;
+}
+@media screen and (max-width: 1024px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
 }
