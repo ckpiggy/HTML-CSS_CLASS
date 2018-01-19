@@ -27,8 +27,6 @@
       <h3>你將會學到 </h3>
       <ol id="index">
         <li><p><a href="#properties">Box properties 盒狀屬性</a></p></li>
-        <li><p><a href="#overflow">Overflow 超出盒子的content處理</a></p></li>
-        <li><p><a href="#bgClip">Background clip 背景裁切</a></p></li>
         <li><p><a href="#display">Box types 盒子的種類</a></p></li>
       </ol>
     </header>
@@ -114,8 +112,53 @@
       </ul>
       <h3>動手做看看！</h3>
       <p>
-        打開範例資料夾的box-model-ex.html，試著把header與main之間的距離加大1.5倍，把main與footer之間的距離縮小一半。
+        打開範例資料夾的box-model-ex.html檔案，做以下的動作：
+      </p>
+      <ul>
+        <li>
+          <p>
+            打開瀏覽器的，開發者工具觀察header, main, footer的box model。
+          </p>
+        </li>
+        <li>
+          <p>
+            將heade的margin設為20px，然後將main的margin設為15px，觀察header與main之間的距離變化。
+          </p>
+        </li>
+        <li>
+          <p>
+            將main的margin與padding設為30px，然後使用瀏覽器的開發者工具觀察main的box model。
+          </p>
+        </li>
+        <li>
+          <p>
+            將main的border寬度設為30px，然後使用瀏覽器的開發者工具觀察main的box model。
+          </p>
+        </li>
+        <li>
+          <p>
+            在我們修改main的box model的同時，main的width與height分別發生什麼變化？
+          </p>
+        </li>
+        <li>
+          <p>
+            設定main的width與height，用開發者工具觀察box model的變化。          
+          </p>
+        </li>
+        <li>
+          <p>
+            把main的margin-bottom設為負數，觀察變化。
+          </p>
+        </li>
+      </ul>
+      <h3><a name="display">Box types 盒子的種類</a></h3>
+      <p>
+        CSS的box model有許多種，我們可以用display屬性操控，常見的有block、 inline、 inline-block，
+        我們剛剛操作的box model都是屬於block。
       </p>
     </main>
-  </bod>
+    <script>
+      createHoverMenu('#index a');
+    </script>
+  </body>
 </html>
