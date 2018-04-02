@@ -11,11 +11,9 @@ This class resource is inspired by [MDN](https://developer.mozilla.org)
   1. 認識HTML 
  
     1 HTML基礎知識
-    2 HTML文字排版
-    3 HTML網頁架構
-    4 引入多媒體資源
-    5 HTML tables
-    6 HTML forms
+    2 認識head元素
+    3 HTML基礎排版
+    4 HTML及網站架構
     
   2. 認識CSS
   
